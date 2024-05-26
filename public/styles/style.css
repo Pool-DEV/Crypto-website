@@ -122,6 +122,13 @@ body {
 
 .nav .nav-logo img {
     max-width: 200px;
+    transition: all 0.25s ease-in-out;
+}
+
+.nav .nav-logo img:hover {
+    transform: scale(1.15);
+    filter: opacity(0.5);
+    transition: all 0.25s ease-in-out;
 }
 
 .nav-main {
@@ -156,7 +163,7 @@ body {
 }
 
 .nav-item:hover .nav-link {
-    transform: scale(1.2);
+    transform: scale(1.15);
     transition: all 0.3s ease-in-out;
 }
 
@@ -346,7 +353,7 @@ main {
     background-color: transparent;
     border: 3px solid #fff;
     color: #fff;
-    transform: scale(1.1);
+    transform: scale(1.08);
     transition: all 0.3s ease-in-out;
 }
 
@@ -365,7 +372,7 @@ main {
     background-color: #fff;
     border: 3px solid #fff;
     color: #000;
-    transform: scale(1.1);
+    transform: scale(1.08);
     transition: all 0.3s ease-in-out;
 }
 
@@ -401,8 +408,18 @@ main {
     background-color: #fff;
     border: 3px solid #fff;
     color: #000;
-    transform: scale(1.1);
+    transform: scale(1.15);
     transition: all 0.3s ease-in-out;
+}
+
+particle {
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .slider__shapes {
