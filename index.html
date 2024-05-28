@@ -79,6 +79,11 @@
             </div>
         </div>
 
+        <!-- Navbar fullscreen -->
+        <div class="fullscreen">
+            <a href="#" class="fa fa-times" onclick="removeFullscreen();"></a>
+        </div>
+
         <main>
             <!-- Hero -->
             <section class="slider__area slider__bg">
@@ -117,10 +122,40 @@
             </section>
         </main>
 
-        <!-- Navbar fullscreen -->
-        <div class="fullscreen">
-            <a href="#" class="fa fa-times" onclick="removeFullscreen();"></a>
-        </div>
+        <!-- Tokenomics -->
+        <section>
+            <div class="slider__area" style="display: flex;">
+                <svg class="polygon polygon-left" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <polygon points="0,0 0,100 100,100" fill="#7d46ff"/>
+                </svg>
+                <svg class="polygon polygon-right" viewBox="0 0 100 100" preserveAspectRatio="none">
+                    <polygon points="0,100 100,100 100,0" fill="#7d46ff"/>
+                </svg>
+            </div>
+            <div class="count-area"> 
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="count-main">
+                                <div class="count-box">
+                                    <span>Total supply</span>
+                                    <h2>1B</h2>
+                                </div>
+            
+                                <div class="count-box">
+                                    <span>Symbol</span>
+                                    <h2>$CONAN</h2>
+                                </div>
+                                <div class="count-box">
+                                    <span>LP burned</span>
+                                    <h2>100%</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <script>
             // Preloader
