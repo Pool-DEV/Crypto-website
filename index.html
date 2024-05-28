@@ -58,11 +58,11 @@
                                     <img src="./public/images/nav.png" alt="Hamburger menu" class="menu-icon" />
                                     <div class="nav-items">
                                         <ul class="navbar-nav mb-2 mb-lg-0">
-                                            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="#tokenomics">Tokenomics</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                                             <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="#roadmap">Roadmap</a></li>
-                                            <li class="nav-item"><a class="nav-link" href="#token">Social media</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#tokenomics">Tokenomics</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#buy">How to buy</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#media">Social media</a></li>
                                         </ul>
                                         <div class="nav-btn ms-3">
                                             <a class="btn-buy" href="https://v1.raydium.io/">Buy Now</a>
@@ -142,10 +142,13 @@
                                     <span>Total supply</span>
                                     <h2>1B</h2>
                                 </div>
-            
                                 <div class="count-box">
-                                    <span>Symbol</span>
-                                    <h2>$CONAN</h2>
+                                    <span>Buy tax</span>
+                                    <h2>0%</h2>
+                                </div>
+                                <div class="count-box">
+                                    <span>Sell tax</span>
+                                    <h2>0%</h2>
                                 </div>
                                 <div class="count-box">
                                     <span>LP burned</span>
@@ -295,7 +298,7 @@
             }
 
             if (document.body.animate) {
-                document.querySelectorAll(".btn-buy").forEach(button => button.addEventListener("mouseenter", (e) => { pop(e); }));
+                document.querySelectorAll(".btn-buy, .nav-btn").forEach(button => button.addEventListener("mouseenter", (e) => { pop(e); }));
             }
         </script>
     </body>

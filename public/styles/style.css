@@ -399,6 +399,7 @@ body {
     text-decoration: none;
     text-align: center;
     box-sizing: content-box;
+    transition: all 0.3s ease-in-out;
 }
 
 .slider__btn .fa:hover {
@@ -417,6 +418,7 @@ particle {
     background-size: contain;
     opacity: 0;
     pointer-events: none;
+    z-index: 100;
 }
 
 /* Tokenomics */
@@ -427,7 +429,7 @@ particle {
 }
 
 .count-area .container {
-    max-width: 960px;
+    max-width: 1200px;
 }
 
 .polygon {
@@ -475,8 +477,8 @@ particle {
     font-weight: 600;
     font-style: italic;
     color: #fff;
-    text-transform: uppercase;
     letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 .count-box h2 {
