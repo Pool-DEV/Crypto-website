@@ -61,16 +61,17 @@
                                             <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                                             <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                                             <li class="nav-item"><a class="nav-link" href="#tokenomics">Tokenomics</a></li>
+                                            <li class="nav-item"><a class="nav-link" href="#chart">Chart</a></li>
                                             <li class="nav-item"><a class="nav-link" href="#buy">How to buy</a></li>
                                             <li class="nav-item"><a class="nav-link" href="#media">Social media</a></li>
                                         </ul>
-                                        <div class="nav-btn ms-3">
-                                            <a class="btn-buy" href="https://v1.raydium.io/">Buy Now</a>
+                                        <div class="btn-buy ms-3">
+                                            <a href="https://raydium.io/swap?outputMint=7XU84evF7TH4suTuL8pCXxA6V2jrE8jKA6qsbUpQyfCY">Buy now</a>
                                         </div>
                                     </div>
                                 </nav>
-                                <div class="nav-btn ms-3">
-                                    <a class="btn-buy" href="">Buy Now</a>
+                                <div class="btn-buy ms-3">
+                                    <a href="https://raydium.io/swap?outputMint=7XU84evF7TH4suTuL8pCXxA6V2jrE8jKA6qsbUpQyfCY">Buy now</a>
                                 </div>
                             </div>
                         </div>
@@ -100,12 +101,12 @@
                                         </p>
                                         <div class="slider__btn">
                                             <div class="group-btn">
-                                                <div class="btn-buy"><a href="#">Buy now</a></div>
-                                                <div class="btn-chart"><a href="#">Chart</a></div>
+                                                <div class="btn-buy"><a href="https://raydium.io/swap?outputMint=7XU84evF7TH4suTuL8pCXxA6V2jrE8jKA6qsbUpQyfCY">Buy now</a></div>
+                                                <div class="btn-chart"><a href="https://dexscreener.com/solana/gs7tziqbmvtmy6ei4dme2w6hqlefej54q8p3gmqrcn9v">Chart</a></div>
                                             </div>
                                             <div class="group-btn">
-                                                <div class="btn-sm"><a href="#" class="fa fa-twitter"></a></div>
-                                                <div class="btn-sm"><a href="#" class="fa fa-telegram"></a></div>
+                                                <div class="btn-sm"><a href="https://twitter.com/ConanOnSol" class="fa fa-twitter"></a></div>
+                                                <div class="btn-sm"><a href="https://t.me/ConanOnSolportal" class="fa fa-telegram"></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -220,12 +221,14 @@
                 cross.onclick = removeFullscreen;
                 fullscreen.appendChild(cross);
                 fullscreen.classList.add("active");
+                document.body.style.overflow = "hidden";
                 animateCSS(".fullscreen", "fadeIn", "0.5s");
             });
 
             function removeFullscreen() {
                 animateCSS(".fullscreen", "fadeOut", "0.5s").then(() => {
                     fullscreen.classList.remove("active");
+                    document.body.style.overflow = "auto";
                     while (fullscreen.childNodes.length > 0) {
                         navItems.appendChild(fullscreen.childNodes[0]);
                     }
@@ -238,14 +241,14 @@
 
             // Particles effect
             function pop(e) {
-                let amount = 20;
+                let amount = 25;
                 let x, y;
                 const bbox = e.target.getBoundingClientRect();
 
                 if (e.clientX === 0 && e.clientY === 0) {
                     x = bbox.left + bbox.width / 2 + window.scrollX;
                     y = bbox.top + bbox.height / 2 + window.scrollY;
-                    for (let i = 0; i < 30; i++) {
+                    for (let i = 0; i < amount; i++) {
                         createParticle(x, y);
                     }
                 } else {
@@ -298,7 +301,7 @@
             }
 
             if (document.body.animate) {
-                document.querySelectorAll(".btn-buy, .nav-btn").forEach(button => button.addEventListener("mouseenter", (e) => { pop(e); }));
+                document.querySelectorAll(".btn-buy").forEach(button => button.addEventListener("mouseenter", (e) => { pop(e); }));
             }
         </script>
     </body>
