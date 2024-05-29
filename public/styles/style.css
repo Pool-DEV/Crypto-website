@@ -219,8 +219,8 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
-.nav-right .btn-buy a,
-.fullscreen .btn-buy a {
+.nav-right a,
+.fullscreen a {
     font-weight: 700;
     font-size: 20px;
     text-decoration: none;
@@ -496,6 +496,28 @@ particle {
     text-shadow: -1px 5px 0px rgba(125, 70, 255, 0.66);
 }
 
+/* Chart */
+#dexscreener-embed {
+    width: 80%;
+    padding-bottom: 125%;
+    position: relative;
+    margin: 0 auto;
+}
+
+@media(min-width: 1400px) {
+    #dexscreener-embed {
+        padding-bottom: 65%;
+    }
+}
+
+#dexscreener-embed iframe {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border: 0;
+}
+
 /* Responsive */
 @media screen and (max-width: 767px) {
     .nav-main,
@@ -662,7 +684,7 @@ particle {
         font-size: 16px;
     }
 
-    .nav-right .btn-buy a {
+    .nav-right a {
         font-size: 16px;
     }
 
