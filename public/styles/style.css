@@ -325,9 +325,44 @@ body {
 }
 
 .slider__content p {
-    margin-bottom: 30px;
-    font-size: 22px;
+    margin-bottom: 20px;
+    font-size: 21px;
     line-height: 1.8;
+}
+
+.slider__content .input-group {
+    flex-wrap: nowrap;
+    margin-bottom: 30px;
+    padding: 10px 20px;
+    width: 100%;
+    border: 3px solid #7d46ff;
+    border-radius: 25px;
+    font-size: 21px;
+    color: #fff;
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+.slider__content .input-group button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.slider__content .input-group input {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    outline: none;
+
+}
+
+.slider__content label {
+    font-size: 21px;
 }
 
 .slider__btn {
@@ -555,12 +590,6 @@ particle {
     }
 }
 
-@media screen and (max-width: 767px) and (min-width: 575px) {
-    .count-main .count-box {
-        width: 50%;
-    }
-}
-
 @media screen and (max-width: 575px) {
     .nav-right .btn-buy {
         display: none;
@@ -592,10 +621,6 @@ particle {
     .count-box span {
         padding: 8px 15px;
         font-size: 12px;
-    }
-
-    .count-main .count-box {
-        width: 50%;
     }
 }
 
