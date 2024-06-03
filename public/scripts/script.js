@@ -81,6 +81,14 @@ function copyContract() {
     contract.setSelectionRange(0, 99999);
     document.execCommand("copy");
     contract.disabled = true;
+
+    const fa_icon = document.querySelector(".fa-copy");
+    fa_icon.classList.remove("fa-copy");
+    fa_icon.classList.add("fa-check");
+    setTimeout(() => {
+        fa_icon.classList.remove("fa-check");
+        fa_icon.classList.add("fa-copy");
+    }, 2000);
 }
 
 // Particles effect
