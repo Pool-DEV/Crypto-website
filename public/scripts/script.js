@@ -1,32 +1,4 @@
-// Preloader
-window.addEventListener("load", (event) => {
-    setTimeout(() => {
-        animateCSS(".slider__img", "tada", "1s");
-        animateCSS(".preloader", "fadeOut", "1s").then(() => {
-            const preloader = document.querySelector(".preloader");
-            preloader.style.display = "none";
-        });
-    }, 2500);
-});
-
-// Navbar sticky
-const nav = document.querySelector(".nav");
-
-document.addEventListener("scroll", (event) => {
-    let scrolledPage = Math.round(window.scrollY);
-    if (scrolledPage > 60) {
-        nav.classList.add("sticky");
-    } else {
-        nav.classList.remove("sticky");
-    }
-});
-
-// Hamburger menu
-const hamburgerMenu = document.querySelector(".menu-icon");
-const cross = document.querySelector(".fa-times");
-const navItems = document.querySelector(".nav-items");
-const fullscreen = document.querySelector(".fullscreen");
-
+// Animations
 const animateCSS = (element, animation, duration = "1s", prefix = "animate__") => new Promise((resolve, reject) => {
     const animationName = `${prefix}${animation}`;
     const node = document.querySelector(element);
@@ -46,49 +18,44 @@ const animateCSS = (element, animation, duration = "1s", prefix = "animate__") =
     node.addEventListener("animationend", handleAnimationEnd, { once: true });
 });
 
-hamburgerMenu.addEventListener("click", () => {
-    while (navItems.childNodes.length > 0) {
-        fullscreen.appendChild(navItems.childNodes[0]);
-    }
-    const cross = document.createElement("a");
-    cross.classList.add("fa", "fa-times");
-    cross.href = "#";
-    cross.onclick = removeFullscreen;
-    fullscreen.appendChild(cross);
-    fullscreen.classList.add("active");
-    document.body.style.overflow = "hidden";
-    animateCSS(".fullscreen", "fadeIn", "0.5s");
+// Preloader
+window.addEventListener("load", (event) => {
+    stickyNav();
+    const preloader = document.querySelector(".preloader");
+    preloader.style.display = "flex";
+    setTimeout(() => {
+        animateCSS(".img-hero", "tada", "1s");
+        animateCSS(".preloader", "fadeOut", "1s").then(() => {
+            preloader.style.display = "none";
+        });
+    }, 2500);
 });
 
-function removeFullscreen() {
-    animateCSS(".fullscreen", "fadeOut", "0.5s").then(() => {
-        fullscreen.classList.remove("active");
-        document.body.style.overflow = "auto";
-        while (fullscreen.childNodes.length > 0) {
-            navItems.appendChild(fullscreen.childNodes[0]);
-        }
-        const faTimes = document.querySelectorAll(".fa-times");
-        faTimes.forEach((faTime) => {
-            faTime.remove();
-        });
-    });
+// Navbar sticky
+const nav = document.querySelector(".navbar");
+const main = document.querySelector("main");
+let sticky = nav.offsetTop;
+
+function stickyNav() {
+    if (window.pageYOffset > sticky) {
+        nav.classList.add("fixed-top");
+        main.style.marginTop = "15vh";
+    } else {
+        nav.classList.remove("fixed-top");
+        main.style.marginTop = "0";
+    }
 }
 
-// Copy contract : https://davidzchen.com/tech/2016/01/19/bootstrap-copy-to-clipboard + (tooltip + icon validate)
-function copyContract() {
-    contract.disabled = false;
-    contract.select();
-    contract.setSelectionRange(0, 99999);
-    document.execCommand("copy");
-    contract.disabled = true;
+window.onscroll = () => stickyNav();
 
-    const fa_icon = document.querySelector(".fa-copy");
-    fa_icon.classList.remove("fa-copy");
-    fa_icon.classList.add("fa-check");
-    setTimeout(() => {
-        fa_icon.classList.remove("fa-check");
-        fa_icon.classList.add("fa-copy");
-    }, 2000);
+// Scroll to anchor
+function scrollToAnchorWithOffset(anchorId, offsetVh) {
+    const anchor = document.getElementById(anchorId);
+    if (anchor) {
+        const offsetPx = offsetVh * window.innerHeight / 100;
+        const anchorPosition = anchor.getBoundingClientRect().top + window.scrollY - offsetPx;
+        window.scrollTo({ top: anchorPosition, behavior: "smooth" });
+    }
 }
 
 // Particles effect
