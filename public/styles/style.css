@@ -207,12 +207,12 @@ particle {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(7px);
-    z-index: 100;
+    z-index: 1030;
 }
 
 .fullscreen.active {
@@ -275,10 +275,6 @@ main .row {
 main .col-12 {
     height: 100%;
     margin-top: -3vh;
-}
-
-section:not(#tokenomics) {
-    margin-top: 8vh;
 }
 
 section p {
