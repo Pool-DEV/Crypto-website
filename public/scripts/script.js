@@ -19,7 +19,7 @@ const animateCSS = (element, animation, duration = "1s", prefix = "animate__") =
 });
 
 // Preloader
-/* window.addEventListener("load", (event) => {
+window.addEventListener("load", (event) => {
     stickyNav();
     const preloader = document.querySelector(".preloader");
     preloader.style.display = "flex";
@@ -29,10 +29,7 @@ const animateCSS = (element, animation, duration = "1s", prefix = "animate__") =
             preloader.style.display = "none";
         });
     }, 2500);
-}); */
-
-const preloader = document.querySelector(".preloader");
-preloader.style.display = "none";
+});
 
 // Navbar sticky
 const nav = document.querySelector(".navbar");
