@@ -263,16 +263,21 @@ particle {
 }
 
 /* Sections */
-main {
+main#hero {
     height: 85vh;
+    margin-top: 0;
 }
 
-main .container,
-main .row {
+main#hero.sticky {
+    margin-top: 15vh;
+}
+
+main#hero .container,
+main#hero .row {
     height: 100%;
 }
 
-main .col-12 {
+main#hero .col-12 {
     height: 100%;
     margin-top: -3vh;
 }
@@ -282,7 +287,7 @@ section p {
 }
 
 /* Hero */
-main .hero-content {
+main#hero .hero-content {
     display: flex !important;
     justify-content: center;
     flex-direction: column;
@@ -564,11 +569,11 @@ footer .copyright {
         display: none !important;
     }
 
-    main .hero-content {
+    main#hero .hero-content {
         align-items: center;
     }
 
-    main .hero-content p {
+    main#hero .hero-content p {
         text-align: center;
     }
 }
@@ -578,16 +583,17 @@ footer .copyright {
         flex-direction: column;
     }
 
-    main#hero .hero-content .orga-btn {
-        margin-top: 10px;
+    main#hero {
+        margin-top: 5%;
     }
 
+    main#hero .hero-content .orga-btn,
     main#hero p,
     main#hero .input-group {
-        margin-bottom: 10px;
+        margin-bottom: 20px;
     }
 
     main#hero .fs-5 {
-        font-size: 1.15rem !important;
+        font-size: 1.1rem !important;
     }
 }

@@ -39,10 +39,10 @@ let sticky = nav.offsetTop;
 function stickyNav() {
     if (window.pageYOffset > sticky) {
         nav.classList.add("fixed-top");
-        main.style.marginTop = "15vh";
+        main.classList.add("sticky");
     } else {
         nav.classList.remove("fixed-top");
-        main.style.marginTop = "0";
+        main.classList.remove("sticky");
     }
 }
 
