@@ -51,10 +51,13 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand"><img src="./public/images/conan3.webp"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse d-flex justify-content-between" id="mynavbar">
+                <div class="responsive-nav">
+                    <button class="btn-buy d-none d-sm-inline d-lg-none" type="button">Buy now</button>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse d-flex justify-content-between navbar-collapse" id="mynavbar">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="#home" onclick="window.scrollTo({ top: 0, behavior: 'smooth' }); return false;">Home</a>
@@ -71,12 +74,18 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#social-media" onclick="javascript:window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }); return false;">Social media</a>
                         </li>
+                        <a href="https://raydium.io/swap?outputMint=7XU84evF7TH4suTuL8pCXxA6V2jrE8jKA6qsbUpQyfCY"><div class="btn-buy d-none">Buy now</div></a>
                     </ul>
         
                     <button class="btn-buy" type="button">Buy now</button>
                 </div>
             </div>
         </nav>
+
+        <!-- Navbar fullscreen -->
+        <div class="fullscreen">
+            <a href="#" class="fa fa-times" onclick="removeFullscreen();"></a>
+        </div>
         
         <div class="container">
             <!-- Hero -->
@@ -86,7 +95,7 @@
                         <div class="col-12 col-lg-6 hero-content">
                             <h1 class="display-3">Welcome to</h1>
                             <img src="./public/images/conantext.webp" alt="$CONAN">
-                            <p class="h5">Meet Conan the Dog, inspired by the world's most famous dog, honored by Donald Trump
+                            <p class="fs-5">Meet Conan the Dog, inspired by the world's most famous dog, honored by Donald Trump
                                 at the White House. Enjoy the latest memes, community buzz, and social media excitement. Say
                                 hello to the ultimate meme coin experience!</p>
         
@@ -154,18 +163,18 @@
         <section id="about">
             <div class="container">
                 <div class="row">
-                    <h2 class="display-4 fw-bold mb-5">About $CONAN</h2>
+                    <h2 class="display-4 fw-bold mb-5">About Conan</h2>
                     <div class="col-12 col-lg-6 about-img d-none d-lg-flex">
                         <img src="./public/images/conan1.png" class="img-hero" alt="$CONAN logo" />
                     </div>
 
                     <div class="col-12 col-lg-6">
-                        <h1 class="display-4 fw-bold">What is $CONAN ?</h1>
-                        <p class="h5 mb-4">Many may ask, what is CONAN ? Conan is the name of the dog honored by Donald Trump at the white house. This project pays homage to Conan, and responds to the popular demand for dog-based narratives in the crypto space.</p>
-                        <p class="h5 mb-4">CONAN was created in response to this demand, and to provide value to the ecosystem the solana blockchain.</p>
-                        <p class="h5 mb-4">CONAN will be more than just a memecoin, featuring several unique use cases and utilities that are beneficial to the long term growth of the Solana Ecosystem.</p>
-                        <p class="h5">With the Solana blockchain and coin making a huge return over the last few months, it’s time for Conan to come in and set the stardard for memecoins on Solana. There’s a new dog in town.</p>
-                        <div class="group-btn d-flex mt-4">
+                        <h1 class="display-4 fw-bold">What is Conan ?</h1>
+                        <p class="fs-5 mb-4">Many may ask, what is CONAN ? Conan is the name of the dog honored by Donald Trump at the white house. This project pays homage to Conan, and responds to the popular demand for dog-based narratives in the crypto space.</p>
+                        <p class="fs-5 mb-4">CONAN was created in response to this demand, and to provide value to the ecosystem the solana blockchain.</p>
+                        <p class="fs-5 mb-4">CONAN will be more than just a memecoin, featuring several unique use cases and utilities that are beneficial to the long term growth of the Solana Ecosystem.</p>
+                        <p class="fs-5">With the Solana blockchain and coin making a huge return over the last few months, it’s time for Conan to come in and set the stardard for memecoins on Solana. There’s a new dog in town.</p>
+                        <div class="group-btn about-buy d-flex mt-4">
                             <div class="btn-buy"><a href="https://raydium.io/swap?outputMint=7XU84evF7TH4suTuL8pCXxA6V2jrE8jKA6qsbUpQyfCY">Buy now</a></div>
                         </div>
                     </div>
@@ -180,7 +189,7 @@
                     <div class="col-12">
                         <div class="chart-content">
                             <h2 class="display-4 fw-bold">Chart</h2>
-                            <p class="h5">Check out the latest price of $CONAN and see how it has been performing over time. You can also see the trading volume and market cap of $CONAN.</p>
+                            <p class="fs-5">Check out the latest price of $CONAN and see how it has been performing over time. You can also see the trading volume and market cap of $CONAN.</p>
                             <iframe src="https://dexscreener.com/solana/GS7TZiQBmVTMy6ei4DMe2w6hQLefEj54Q8p3gMqRCn9V?embed=1&theme=dark&trades=0&info=0" width="100%" height="500vh" scrolling="no" class="mt-4"></iframe>
                         </div>
                     </div>
@@ -195,7 +204,7 @@
                     <div class="col-12">
                         <div class="how-to-buy-content">
                             <h2 class="display-4 fw-bold">How to buy $CONAN</h2>
-                            <p class="h5">Ready to join the Conan movement ? Follow these simple steps to buy $CONAN and join us today!</p>
+                            <p class="fs-5">Ready to join the Conan movement ? Follow these simple steps to buy $CONAN and join us today!</p>
                             <div class="row">
                                 <div class="col-12 col-md-6 col-lg-6 mt-4">
                                     <div class="step-border h-100">
@@ -246,8 +255,8 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="social-media-content">
-                            <h2 class="display-4 fw-bold">Join the $CONAN community !</h2>
-                            <p class="h5">$CONAN is more than just a cryptocurrency, it is also a way to connect with other dog meme lovers and make a difference in the world. Join the Conan community today on social media and stay up to date with the latest news, memes, and community buzz.</p>
+                            <h2 class="display-4 fw-bold">Join the $CONAN community!</h2>
+                            <p class="fs-5">$CONAN is more than just a cryptocurrency, it is also a way to connect with other dog meme lovers and make a difference in the world. Join the Conan community today on social media and stay up to date with the latest news, memes, and community buzz!</p>
                             <div class="group-btn d-flex flex-row justify-content-center mt-4">
                                 <div class="btn-sm"><a href="https://twitter.com/ConanOnSol" class="fa fa-twitter"></a></div>
                                 <div class="btn-sm"><a href="https://t.me/ConanOnSolportal" class="fa fa-telegram"></a></div>

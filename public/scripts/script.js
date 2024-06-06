@@ -1,4 +1,4 @@
-// Animations
+// Animation
 const animateCSS = (element, animation, duration = "1s", prefix = "animate__") => new Promise((resolve, reject) => {
     const animationName = `${prefix}${animation}`;
     const node = document.querySelector(element);
@@ -48,6 +48,40 @@ function stickyNav() {
 
 window.onscroll = () => stickyNav();
 
+// Hamburger menu
+const hamburgerMenu = document.querySelector(".navbar-toggler-icon");
+const cross = document.querySelector(".fa-times");
+const navItems = document.querySelector(".navbar-nav");
+const fullscreen = document.querySelector(".fullscreen");
+
+hamburgerMenu.addEventListener("click", () => {
+    while (navItems.childNodes.length > 0) {
+        fullscreen.appendChild(navItems.childNodes[0]);
+    }
+    const cross = document.createElement("a");
+    cross.classList.add("fa", "fa-times");
+    cross.href = "#";
+    cross.onclick = removeFullscreen;
+    fullscreen.appendChild(cross);
+    fullscreen.classList.add("active");
+    document.body.style.overflow = "hidden";
+    animateCSS(".fullscreen", "fadeIn", "0.5s");
+});
+
+function removeFullscreen() {
+    animateCSS(".fullscreen", "fadeOut", "0.5s").then(() => {
+        fullscreen.classList.remove("active");
+        document.body.style.overflow = "auto";
+        while (fullscreen.childNodes.length > 0) {
+            navItems.appendChild(fullscreen.childNodes[0]);
+        }
+        const faTimes = document.querySelectorAll(".fa-times");
+        faTimes.forEach((faTime) => {
+            faTime.remove();
+        });
+    });
+}
+
 // Scroll to anchor
 function scrollToAnchorWithOffset(anchorId, offsetVh) {
     const anchor = document.getElementById(anchorId);
@@ -58,7 +92,6 @@ function scrollToAnchorWithOffset(anchorId, offsetVh) {
     }
 }
 
-// Particles effect
 function pop(e) {
     let amount = 25;
     let x, y;
@@ -121,4 +154,21 @@ function removeParticle(e) {
 
 if (document.body.animate) {
     document.querySelectorAll(".btn-buy").forEach(button => button.addEventListener("mouseenter", (e) => { pop(e); }));
+}
+
+// Copy to clipboard
+function copyContract() {
+    contract.disabled = false;
+    contract.select();
+    contract.setSelectionRange(0, 99999);
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();
+    contract.disabled = true;
+
+    icon_copy.classList.remove("fa-clipboard");
+    icon_copy.classList.add("fa-check");
+    setTimeout(() => {
+        icon_copy.classList.remove("fa-check");
+        icon_copy.classList.add("fa-clipboard");
+    }, 2000);
 }

@@ -16,7 +16,7 @@ server.on("request", (req, res) => {
             res.end("Erreur 404 : Page non trouvée");
         }
     } else if (req.url == "/") {
-        res.end(fs.readFileSync("index2.html"));
+        res.end(fs.readFileSync("index.html"));
     } else {
         res.writeHead(404);
         // Prévoir une page d'erreur 404
